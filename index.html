@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lueken's Portfolio</title>
   <style>
     :root {
@@ -24,119 +24,122 @@
       text-align: center;
     }
 
-    header h1 {
+    header img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
       margin: 0;
       font-size: 2.5rem;
     }
 
-    header h2 {
+    h2 {
       margin-top: 0.5rem;
-      font-weight: normal;
       font-size: 1.2rem;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1rem;
+      font-weight: normal;
     }
 
     .intro {
-      margin-bottom: 2rem;
+      text-align: center;
+      padding: 1rem 2rem;
       font-size: 1.1rem;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    .slider {
+      max-width: 800px;
+      margin: auto;
+      position: relative;
     }
 
     .project {
+      display: none;
+      padding: 2rem;
       background-color: white;
+      border-radius: 12px;
       border: 2px solid var(--celeste);
-      border-radius: 10px;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .project h3 {
-      margin-top: 0;
-      color: var(--dark);
+    .project.active {
+      display: block;
     }
 
     iframe {
       width: 100%;
       height: 300px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       margin-bottom: 1rem;
     }
 
-    .screenshot {
-      width: 100%;
-      border-radius: 5px;
+    pre {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .nav-buttons {
+      text-align: center;
       margin-top: 1rem;
     }
 
-    footer {
+    .nav-buttons button {
       background-color: var(--celeste);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      color: var(--dark);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      margin: 0 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    .nav-buttons button:hover {
+      background-color: #a2f0f0;
+    }
 
-      header h2 {
-        font-size: 1rem;
-      }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--celeste);
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <!-- Optional Profile Picture -->
+    <!-- <img src="img/your-photo.jpg" alt="Lueken" /> -->
     <h1>Lueken's Portfolio</h1>
     <h2>Future Software Developer | Project-Driven, Team-Focused</h2>
   </header>
 
-  <div class="container">
-    <div class="intro">
-      I’m a Computer Science teacher creating real-world opportunities for high school students through my nonprofit, <strong>XPerience Consulting 501(c)(3)</strong>. This portfolio showcases student-centered, impact-driven projects — many inspired by global goals and community needs.
-    </div>
+  <div class="intro">
+    I’m a Computer Science teacher creating real-world opportunities for high school students through my nonprofit, <strong>XPerience Consulting 501(c)(3)</strong>. This portfolio showcases student-centered, impact-driven projects — many inspired by global goals and community needs.
+  </div>
 
-    <div class="projects">
+  <div class="slider">
 
-      <!-- Project 1 -->
-<div class="project">
-  <h3>Project 1: Road Rush</h3>
-
-  <!-- Game Embed -->
-  <iframe src="https://academy.cs.cmu.edu/sharing/tealCamel7036/embed" width="100%" height="300"></iframe>
-
-  <!-- Description -->
-  <p>
-    In Road Rush, players use arrow keys to control a car driving down a busy road. The game keeps the car within boundaries and increases the score the longer you avoid hitting other cars. It simulates traffic by randomly generating cars and features real-time user input with smooth, responsive controls.
-  </p>
-
-  <!-- Concepts Learned -->
-  <p><strong>Concepts Learned:</strong> for loops, object creation with Rect, random positioning, input handling with <code>onKeyHold()</code>, collision avoidance, and movement constraints.</p>
-
-  <!-- Code Block 1: Generating Cars -->
-  <pre style="background-color:#f4f4f4;padding:1rem;border-radius:8px;overflow-x:auto;">
-<code>for i in range(5):
+    <!-- Project 1 -->
+    <div class="project active">
+      <h3>Project 1: Road Rush</h3>
+      <iframe src="https://academy.cs.cmu.edu/sharing/tealCamel7036/embed"></iframe>
+      <p>
+        In Road Rush, players control a car using arrow keys and avoid collisions with other cars. The game keeps the car within road boundaries, increases score over time, and uses randomly placed obstacles to simulate traffic.
+      </p>
+      <p><strong>Concepts Learned:</strong> for loops, object placement, randomization, key handling, and movement constraints.</p>
+      <pre><code>for i in range(5):
     cars.add(Rect(random.randrange(400, 2000), 
                   random.randrange(250, 320), 
-                  30, 20, fill='red'))</code>
-  </pre>
-
-  <!-- Code Block 2: Movement Handling -->
-  <pre style="background-color:#f4f4f4;padding:1rem;border-radius:8px;overflow-x:auto;">
-<code>def onKeyHold(keys):
+                  30, 20, fill='red'))</code></pre>
+      <pre><code>def onKeyHold(keys):
     if 'up' in keys and car.top > 250:
         car.centerY -= cars.speed
     if 'left' in keys and car.left > 0:
@@ -144,41 +147,18 @@
     if 'right' in keys and car.right < 400:
         car.centerX += cars.speed    
     if 'down' in keys and car.bottom < 350:
-        car.centerY += cars.speed</code>
-  </pre>
-</div>
+        car.centerY += cars.speed</code></pre>
+    </div>
 
-      <!-- Placeholder Projects 2–6 -->
-      <div class="project">
-        <h3>Project 2: [Title Here]</h3>
-        <iframe src="[Your Embed Link]"></iframe>
-        <p>[Description of your second project goes here.]</p>
-      </div>
+    <!-- Add More Projects Here -->
+    <div class="project">
+      <h3>Project 2: Coming Soon</h3>
+      <p>Description of your next project...</p>
+    </div>
 
-      <div class="project">
-        <h3>Project 3: [Title Here]</h3>
-        <iframe src="[Your Embed Link]"></iframe>
-        <p>[Description of your third project goes here.]</p>
-      </div>
-
-      <div class="project">
-        <h3>Project 4: [Title Here]</h3>
-        <iframe src="[Your Embed Link]"></iframe>
-        <p>[Description of your fourth project goes here.]</p>
-      </div>
-
-      <div class="project">
-        <h3>Project 5: [Title Here]</h3>
-        <iframe src="[Your Embed Link]"></iframe>
-        <p>[Description of your fifth project goes here.]</p>
-      </div>
-
-      <div class="project">
-        <h3>Project 6: [Title Here]</h3>
-        <iframe src="[Your Embed Link]"></iframe>
-        <p>[Description of your sixth project goes here.]</p>
-      </div>
-
+    <div class="nav-buttons">
+      <button onclick="changeProject(-1)">← Previous</button>
+      <button onclick="changeProject(1)">Next →</button>
     </div>
   </div>
 
@@ -186,5 +166,15 @@
     © 2025 Lueken | XPerience Consulting 501(c)(3)
   </footer>
 
+  <script>
+    const projects = document.querySelectorAll('.project');
+    let current = 0;
+
+    function changeProject(step) {
+      projects[current].classList.remove('active');
+      current = (current + step + projects.length) % projects.length;
+      projects[current].classList.add('active');
+    }
+  </script>
 </body>
 </html>
