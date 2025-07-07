@@ -1,14 +1,161 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lueken's Portfolio</title>
   <style>
-    h1 {text-align: center;}
-  </style>
+    :root {
+      --celeste: #B2FFFF;
+      --dark: #003344;
+      --light: #f9f9f9;
+    }
 
-  <body>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    header {
+      background-color: var(--celeste);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header h2 {
+      margin-top: 0.5rem;
+      font-weight: normal;
+      font-size: 1.2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .intro {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background-color: white;
+      border: 2px solid var(--celeste);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      color: var(--dark);
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    .screenshot {
+      width: 100%;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: var(--celeste);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header h2 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
     <h1>Lueken's Portfolio</h1>
     <h2>Future Software Developer | Project-Driven, Team-Focused</h2>
-    <iframe width="410" height="460"
-     src="https://academy.cs.cmu.edu/sharing/khakiElephant7446/embed"> 
-    </iframe>
-  </body>
-  
+  </header>
+
+  <div class="container">
+    <div class="intro">
+      I’m a Computer Science teacher creating real-world opportunities for high school students through my nonprofit, <strong>XPerience Consulting 501(c)(3)</strong>. This portfolio showcases student-centered, impact-driven projects — many inspired by global goals and community needs.
+    </div>
+
+    <div class="projects">
+
+      <!-- Project 1 -->
+      <div class="project">
+        <h3>Project 1: Elephant Escape</h3>
+        <iframe src="https://academy.cs.cmu.edu/sharing/khakiElephant7446/embed"></iframe>
+        <p>A fun, interactive Python game created in CMU Academy. Built with loops, conditionals, and user input to simulate an elephant escaping a maze.</p>
+        <!-- <img src="your_screenshot_url_here.png" alt="Code Screenshot" class="screenshot"> -->
+      </div>
+
+      <!-- Placeholder Projects 2–6 -->
+      <div class="project">
+        <h3>Project 2: [Title Here]</h3>
+        <iframe src="[Your Embed Link]"></iframe>
+        <p>[Description of your second project goes here.]</p>
+      </div>
+
+      <div class="project">
+        <h3>Project 3: [Title Here]</h3>
+        <iframe src="[Your Embed Link]"></iframe>
+        <p>[Description of your third project goes here.]</p>
+      </div>
+
+      <div class="project">
+        <h3>Project 4: [Title Here]</h3>
+        <iframe src="[Your Embed Link]"></iframe>
+        <p>[Description of your fourth project goes here.]</p>
+      </div>
+
+      <div class="project">
+        <h3>Project 5: [Title Here]</h3>
+        <iframe src="[Your Embed Link]"></iframe>
+        <p>[Description of your fifth project goes here.]</p>
+      </div>
+
+      <div class="project">
+        <h3>Project 6: [Title Here]</h3>
+        <iframe src="[Your Embed Link]"></iframe>
+        <p>[Description of your sixth project goes here.]</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Lueken | XPerience Consulting 501(c)(3)
+  </footer>
+
+</body>
 </html>
